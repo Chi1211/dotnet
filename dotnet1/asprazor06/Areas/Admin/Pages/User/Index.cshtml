@@ -1,0 +1,29 @@
+﻿@page "/admin/user"
+@model App.Admin.User.IndexModel
+@{
+}
+<p> List user</p>
+
+<partial name="_StatusMessage" model="@Model.StatusMessage"></partial> 
+
+<table class="table">
+    
+        <tr>
+            <th >
+                User
+            </th>
+            <th>
+                Role
+            </th>
+        </tr>
+    @foreach (var user in @Model.users)
+    {
+        <tr>
+            <p>vhijll;</p>
+            <th>@user.UserName</th>
+            
+            <th> <a class="btn btn-secondary" asp-page="./AddRole" asp-route-roleid="@user.Id">Edit @user.Id</a></th>
+            @* <th> <a class="btn btn-secondary" asp-page="./Delete" asp-route-roleid="@role.Id">Delete</a></th> *@
+        </tr>
+    }
+</table>

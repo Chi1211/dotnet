@@ -1,0 +1,48 @@
+﻿@page
+@model ContactModel
+<form class="bg-light p-2 m-3" method="post" asp-page="Contact">
+    <div class="mb-3">
+        <label class="form-label" asp-for="@Model.userModel.Id"></label>
+        <input class="form-control" asp-for="@Model.userModel.Id" />
+        <span asp-validation-for="userModel.Id"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="userModel.Name"></label>
+        <input class="form-control" asp-for="@Model.userModel.Name" />
+        <span asp-validation-for="userModel.Name"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="userModel.Email"></label>
+        <input class="form-control" asp-for="@Model.userModel.Email" />
+        <span asp-validation-for="userModel.Email"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="userModel.Birthday"></label>
+        <input class="form-control" asp-for="@Model.userModel.Birthday" />
+        <span asp-validation-for="userModel.Birthday"></span>
+    </div>
+    <button class="btn btn-danger" type="submit">Send</button>
+</form>
+<div class="alert alert-danger">
+    <p>Thông tin User</p>
+    <ul>
+        @if (@Model.userModel != null)
+        {
+            <li>ID: @Model.userModel.Id</li>
+            <li>Name: @Model.userModel.Name</li>
+            <li>Email: @Model.userModel.Email</li>
+            <li>Birthday: @Model.userModel.Birthday</li>
+        }else {
+            <li>ID: </li>
+            <li>Name: </li>
+            <li>Email: </li>
+            <li>Birthday: </li>
+        }
+
+    </ul>
+
+</div>
+
+@section Scripts{
+<partial name="_ValidationScriptsPartial"></partial>
+}

@@ -1,0 +1,20 @@
+﻿@page "/product/{id:int?}"
+@model MyApp.Namespace.ProductPageModel
+@{
+    var product=Model.product;
+    var products=Model.productService.AllProduct(); 
+}
+@if(product!=null)
+{
+    <p>Id: @product.Id</p>
+    <p>Tên sản phẩm: @product.Name</p>
+    <p>Mô tả sản phẩm: @product.Description</p>
+    <p>Giá: @product.Price</p>
+    <p>---------------------------</p>
+    <p><a asp-page="ProductPage" asp-route-id="">Danh sách sản phẩm</a></p>
+}else{
+    @foreach (var item in products)
+    {
+        <p><a asp-page="ProductPage" asp-route-id=@item.Id>@item.Name</a></p>
+    }
+}

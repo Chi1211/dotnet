@@ -1,0 +1,19 @@
+@using aspmvc_hello.Models
+@{
+    Layout="_Layout";
+    ViewData["Title"]="HelloView";
+}
+@model List<ProductModel>
+
+
+
+<p>@ViewData["Title"]</p>
+<h1>Bảng sản phẩm theo</h1>
+<ul>
+    @foreach (var product in @Model)
+    {
+        <li>Tên sản phẩm: @product.name</li>
+         <li>Giá: @product.price</li>
+    }
+    
+</ul>

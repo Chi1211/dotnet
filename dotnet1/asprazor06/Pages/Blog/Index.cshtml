@@ -1,0 +1,60 @@
+@page  "/Blog/{Search?}"
+@model asprazor06.Pages_Blog.IndexModel
+
+@{
+}
+@{
+    var pagingmodel=new PagingModel(){
+        currentPage=Model.currentPage,
+        countPages=Model.countPages,
+        @* currentPage=1,
+        countPages=5, *@
+        generateUrl=(int? p)=>Url.Page("/Blog/Index", new {p=p})
+    };
+}
+<h1>Index</h1>
+<form method="get" asp-page="./Index">
+    <label >Tìm kiếm</label>
+    <input name="Search" value=""/>
+    <button class="btn-btn-danger" type="submit">Tìm kiếm</button>
+</form>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               STT
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Article[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Article[0].Created)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Article) {
+        <tr>
+            <td>
+               @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<partial name="_Paging" model="@pagingmodel"></partial>

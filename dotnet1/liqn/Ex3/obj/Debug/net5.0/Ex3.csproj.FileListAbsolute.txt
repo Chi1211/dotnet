@@ -1,0 +1,16 @@
+D:\dotnet\liqn\Ex3\obj\Debug\net5.0\Ex3.csproj.AssemblyReference.cache
+D:\dotnet\liqn\Ex3\obj\Debug\net5.0\Ex3.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnet\liqn\Ex3\obj\Debug\net5.0\Ex3.AssemblyInfoInputs.cache
+D:\dotnet\liqn\Ex3\obj\Debug\net5.0\Ex3.AssemblyInfo.cs
+D:\dotnet\liqn\Ex3\obj\Debug\net5.0\Ex3.csproj.CoreCompileInputs.cache
+D:\dotnet\liqn\Ex3\bin\Debug\net5.0\Ex3.exe
+D:\dotnet\liqn\Ex3\bin\Debug\net5.0\Ex3.deps.json
+D:\dotnet\liqn\Ex3\bin\Debug\net5.0\Ex3.runtimeconfig.json
+D:\dotnet\liqn\Ex3\bin\Debug\net5.0\Ex3.runtimeconfig.dev.json
+D:\dotnet\liqn\Ex3\bin\Debug\net5.0\Ex3.dll
+D:\dotnet\liqn\Ex3\bin\Debug\net5.0\ref\Ex3.dll
+D:\dotnet\liqn\Ex3\bin\Debug\net5.0\Ex3.pdb
+D:\dotnet\liqn\Ex3\obj\Debug\net5.0\Ex3.dll
+D:\dotnet\liqn\Ex3\obj\Debug\net5.0\ref\Ex3.dll
+D:\dotnet\liqn\Ex3\obj\Debug\net5.0\Ex3.pdb
+D:\dotnet\liqn\Ex3\obj\Debug\net5.0\Ex3.genruntimeconfig.cache

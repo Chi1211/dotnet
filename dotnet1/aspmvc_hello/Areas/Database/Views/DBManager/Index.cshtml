@@ -1,0 +1,59 @@
+@using aspmvc_hello.Models
+@using Microsoft.EntityFrameworkCore
+@inject AppDBContext dbConext
+
+@{
+    ViewData["Title"]="Database-Manager";
+    var connect=dbConext.Database.GetDbConnection();
+    var dbname=connect.Database;
+    var can_connect=dbConext.Database.CanConnect();
+
+    dbConext.Database.GetPendingMigrations();
+}
+
+<h1>@ViewData["Title"]</h1>
+<div>
+    <p>---------Thông tin Database------------</p>
+    <p>Name DB: @dbname</p>
+    <p>DataSource: @connect.DataSource</p>
+    <p>State: @connect.State</p>
+</div>
+
+<div>
+    <p>---------Migrations------------</p>
+    <p>---------Migrations Pending------------</p>
+    @foreach (var migraPen in @dbConext.Database.GetPendingMigrations())
+    {
+        <p>@migraPen</p>
+    }
+    <p>---------Migrations Apply------------</p>
+    @foreach (var migraApp in @dbConext.Database.GetAppliedMigrations())
+    {
+        <p>@migraApp</p>
+    }
+</div>
+
+<div>
+@if(!can_connect)
+{
+    <p>Không thể connect</p>
+    <div>
+        <a asp-action="CreateDB">Tạo @dbname</a>
+    
+</div>
+}else{
+    <p>---------Các table---------</p>
+    await dbConext.Database.OpenConnectionAsync();
+    var table= connect.GetSchema("Tables");
+
+    foreach (System.Data.DataRow row in table.Rows)
+    {
+        <p>Name table: @row["TABLE_NAME"]</p>
+    }
+    <div>
+        <a asp-action="DeleteDB">Xóa @dbname</a>
+    
+</div>
+    
+}
+</div>

@@ -1,0 +1,31 @@
+@using aspmvc_hello.Service
+@using aspmvc_hello.Models
+@model List<ProductModel>
+@inject PlanetService planetService
+@{
+    string url(int _id){
+        return Url.RouteUrl("detail", new{ id=_id});
+    }
+}
+<h1> Danh sách các hành tinh trong hệ mặt trời</h1>
+
+<div>
+    <ul>
+
+        @foreach (var planet in planetService.planet)
+        {
+             <li>
+                 <div>
+                   <img src="@planet.urlImage">
+                 </div>
+                 <div>
+                     <a href="@url(@planet.id)" >@planet.name --- @planet.vnName</a>
+                    
+                 </div>
+            </li>
+        }
+        <li>
+
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,34 @@
+﻿@page "/admin/roles"
+@model App.Admin.Role.IndexModel
+@{
+}
+<p> Roles</p>
+
+<partial name="_StatusMessage" model="@Model.StatusMessage"></partial> 
+
+<div>
+    <a class="btn btn-secondary" asp-page="./Create">Create</a>
+</div>
+<div>
+    <a class="btn btn-secondary" asp-page="../User/Index">List user</a>
+</div>
+<table class="table">
+    
+        <tr>
+            <th >
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+        </tr>
+    @foreach (var role in @Model.roles)
+    {
+        <tr>
+            <th>@role.Id</th>
+            <th>@role.Name</th>
+            <th> <a class="btn btn-secondary" asp-page="./Edit" asp-route-roleid="@role.Id">Edit</a></th>
+            <th> <a class="btn btn-secondary" asp-page="./Delete" asp-route-roleid="@role.Id">Delete</a></th>
+        </tr>
+    }
+</table>

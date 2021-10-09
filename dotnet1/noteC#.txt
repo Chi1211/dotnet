@@ -1,0 +1,21 @@
+C#: reference is pointed
+	+ ref variable đều pointed về heap: tiết kiệm stack
+	+ value: save stack 
+Nullables: ? and ??: allows variable null
+
+overiding:Parent( abstrac or virtual)
+	sub(publicb overide int news())
+
+var gán mới biến kiểu dữ liệu, phải khởi tạo liền.
+#region#endregion
+dynamic: kiểu dữ liệu khi run mới biết bug hay k
+
+out: k cần gán giá trị r mới truyền ref cần gán
+
+collection: link liên kết
+
+static k cần khởi táo
+
+delegate= Func<>=Action<>;
+
+dependency enjection: +enject bằng phương thức khởi tạo

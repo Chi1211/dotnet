@@ -1,0 +1,17 @@
+@using Microsoft.EntityFrameworkCore
+@using aspmvc_hello.Models
+@inject AppDBContext dbContext
+@{
+    ViewData["Title"]="Delete Database";
+    var dbname=dbContext.Database.GetDbConnection().Database;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Bạn có muốn chắc chắn xóa @dbname</p>
+<form method="delete">
+        <button type="submit"> Xóa</button>
+</form>
+<p>
+    <a asp-action="Index">Quay lại trang quản lí db</a>
+</p>

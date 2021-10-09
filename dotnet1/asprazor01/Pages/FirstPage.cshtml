@@ -1,0 +1,12 @@
+@page "/trang-dau-tien/{solanlap:int}"
+@model FirstPageModel
+<h1>@Model.title</h1>
+<h1>hello</h1>
+@{
+    var solanlapstring= this.Request.RouteValues["solanlap"]??"0";
+    int solanlap =Int32.Parse(solanlapstring.ToString());
+    for(int i=0;i< solanlap;i++)
+    {
+        <p>Lần @i</p>
+    }
+}
